@@ -51,6 +51,21 @@ module.exports = function(config) {
           return cb(null, res)
         })
     },
+
+    createDatabase: function(opts, cb) {
+      request.post(API_URL + "partners/" + opts.username + "/accounts/" + opts.accountName + "/databases")
+        .send({name: opts.databaseName})
+        .send({plan: opts.plan})
+        .send({username: opts.databaseUsername})
+        .send({password: opts.databasePassword})
+        .auth(config.username, config.password)
+        .end(function(err, res) {
+          if (res.error) {
+            return cb(res.error, res)
+          }
+          return cb(null, res)
+        })
+    },
   }
 
 }

@@ -43,6 +43,7 @@ function listDatabases(opts) {
       console.log("Error listing databases: ", res.body.message)
       return
     }
+    console.log(res.body)
   })
 }
 
@@ -53,6 +54,7 @@ function createDatabase(opts) {
       console.log("Error creating database: ", res.body.message)
       return
     }
+    console.log(res.body)
   })
 }
 
@@ -76,7 +78,7 @@ nomnom.command('createAccount')
       required: true
     },
     accountName: {
-      required: true
+      required: true,
       help: "Account name to create"
     }
   })
@@ -121,6 +123,6 @@ nomnom.command('createDatabase')
       help: "Password of admin user to create in database"
     }
   })
-  .callback(listDatabases)
+  .callback(createDatabase)
 
 nomnom.parse()

@@ -1,4 +1,4 @@
 mongolab-partner
 ================
 
-MongoLab Partner API wrapper
+MongoLab Partner API wrapper & CLI interface.
