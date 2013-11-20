@@ -47,6 +47,28 @@ function listDatabases(opts) {
   })
 }
 
+function viewDatabase(opts) {
+  var m = mongolab({username: opts.username, password: opts.password})
+  m.viewDatabase(opts.accountName, opts.databaseName, function(err, res) {
+    if (err) {
+      console.log("Error viewing database: ", res.body.message)
+      return
+    }
+    console.log(res.body)
+  })
+}
+
+function deleteDatabase(opts) {
+  var m = mongolab({username: opts.username, password: opts.password})
+  m.deleteDatabase(opts.accountName, opts.databaseName, function(err, res) {
+    if (err) {
+      console.log("Error deleteing database: ", res.body.message)
+      return
+    }
+    console.log(res.body)
+  })
+}
+
 function createDatabase(opts) {
   var m = mongolab({username: opts.username, password: opts.password})
   m.createDatabase(opts, function(err, res) {
@@ -96,6 +118,32 @@ nomnom.command('listDatabases')
     }
   })
   .callback(listDatabases)
+
+nomnom.command('viewDatabase')
+  .options({
+    accountName: {
+      required: true,
+      help: "Account name to view database for"
+    },
+    databaseName: {
+      required: true,
+      help: "Databases name to view"
+    }
+  })
+  .callback(viewDatabase)
+
+nomnom.command('deleteDatabase')
+  .options({
+    accountName: {
+      required: true,
+      help: "Account name to delete databases for"
+    },
+    databaseName: {
+      required: true,
+      help: "Databases name to delete"
+    }
+  })
+  .callback(deleteDatabase)
 
 nomnom.command('createDatabase')
   .options({

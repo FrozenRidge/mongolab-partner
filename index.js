@@ -40,6 +40,30 @@ module.exports = function(config) {
         })
     },
 
+    viewDatabase: function(accountName, databaseName, cb) {
+      request
+        .get(API_URL + "partners/" + config.username + "/accounts/" + accountName + "/databases/" + databaseName)
+        .auth(config.username, config.password)
+        .end(function(res) {
+          if (res.error) {
+            return cb(res.error, res)
+          }
+          return cb(null, res)
+        })
+    },
+
+    deleteDatabase: function(accountName, databaseName, cb) {
+      request
+        .del(API_URL + "partners/" + config.username + "/accounts/" + accountName + "/databases/"+ databaseName)
+        .auth(config.username, config.password)
+        .end(function(res) {
+          if (res.error) {
+            return cb(res.error, res)
+          }
+          return cb(null, res)
+        })
+    },
+
     createAccount: function(opts, cb) {
       request.post(API_URL + "partners/" + opts.username + "/accounts")
         .send({name: opts.accountName, adminUser: {email: opts.adminEmail, username: opts.adminUser}})
