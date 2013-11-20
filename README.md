@@ -7,7 +7,7 @@ mongolab-partner
 
 `npm install mongolab-partner`
 
-## Usage
+## API Usage
 
 ```javascript
 
