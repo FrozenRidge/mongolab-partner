@@ -7,7 +7,7 @@
     "mongolab-partner": "main.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jshint"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,8 @@
   "dependencies": {
     "superagent": "~0.15.7",
     "nomnom": "~1.6.2"
+  },
+  "devDependencies": {
+    "jshint": "~2.3.0"
   }
 }

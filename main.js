@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* jshint asi:true */
 var nomnom = require('nomnom')
 var mongolab = require('./index.js')
 

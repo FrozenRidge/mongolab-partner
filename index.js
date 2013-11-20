@@ -1,3 +1,4 @@
+/* jshint asi:true */
 var request = require('superagent')
 
 var API_URL = "https://api.mongolab.com/api/1/"
