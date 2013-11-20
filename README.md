@@ -59,11 +59,25 @@ Commands map to API calls. The following are available:
 
 Create database example:
 
-`mongolab-partner createDatabase -u <username> -p <password> --accountName <account name> --databaseUsername <database username> --databasePassword <database password> --databaseName <database name>`
+```bash
+mongolab-partner createDatabase \
+  -u <username>  \
+  -p <password>  \
+  --accountName <account name> \
+  --databaseUsername <database username> \
+  --databasePassword <database password> \
+  --databaseName <database name>`
+```
 
 View database example:
 
-`mongolab-partner viewDatabase -u <username> -p <password> --accountName <account name> --databaseName <database name>`
+```bash
+mongolab-partner viewDatabase \
+  -u <username> \
+  -p <password> \
+  --accountName <account name>\
+  --databaseName <database name>
+```
 
 List databases:
 
