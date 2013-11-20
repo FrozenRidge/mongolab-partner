@@ -22,9 +22,9 @@ mongolab.viewPartner(function(err, res) {
 
 ## API
 
-The module should be initliazed with:
+The module should be initialized with an options object:
 
-{username: ..., password: ...}
+`{username: ..., password: ...}`
 
 It will return an object which implements the following API calls:
 
@@ -32,9 +32,9 @@ __viewPartner(cb)__
 
 __viewAccounts(cb)__
 
-__createAccount({accountName: ..., adminUser: ..., adminEmail: ...}, cb)
+__createAccount({accountName: ..., adminUser: ..., adminEmail: ...}, cb)__
 
-__createDatabase({databaseName: ..., databaseUser: ..., databasePassword: ..., plan: ..., cloud: ..., accountName: ...}, cb) __
+__createDatabase({databaseName: ..., databaseUser: ..., databasePassword: ..., plan: ..., cloud: ..., accountName: ...}, cb)__
 
 __listDatabases(accountName, cb)__
 
