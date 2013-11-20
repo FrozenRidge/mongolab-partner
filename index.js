@@ -81,6 +81,7 @@ module.exports = function(config) {
       request.post(API_URL + "partners/" + opts.username + "/accounts/" + opts.accountName + "/databases")
         .send({name: opts.databaseName})
         .send({plan: opts.plan})
+        .send({cloud: opts.cloud})
         .send({username: opts.databaseUsername})
         .send({password: opts.databasePassword})
         .auth(config.username, config.password)

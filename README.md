@@ -22,21 +22,25 @@ mongolab.viewPartner(function(err, res) {
 
 ## API
 
-The following API calls are documented:
+The module should be initliazed with:
 
-__viewPartner__
+{username: ..., password: ...}
 
-__viewAccounts__
+It will return an object which implements the following API calls:
 
-__createAccount__
+__viewPartner(cb)__
 
-__createDatabase__
+__viewAccounts(cb)__
 
-__listDatabases__
+__createAccount({accountName: ..., adminUser: ..., adminEmail: ...}, cb)
 
-__viewDatabase__ 
+__createDatabase({databaseName: ..., databaseUser: ..., databasePassword: ..., plan: ..., cloud: ..., accountName: ...}, cb) __
 
-__deleteDatabase__
+__listDatabases(accountName, cb)__
+
+__viewDatabase(accountName, cb)__
+
+__deleteDatabase(accountName, databaseName, cb)__
 
 
 ## CLI
