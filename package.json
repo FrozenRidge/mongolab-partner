@@ -1,0 +1,29 @@
+{
+  "name": "mongolab-partner",
+  "version": "0.1.0",
+  "description": "MongoLab Partner API wrapper",
+  "main": "index.js",
+  "bin": {
+    "mongolab-partner": "main.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/FrozenRidge/mongolab-partner.git"
+  },
+  "keywords": [
+    "mongolab"
+  ],
+  "author": "Niall O'Higgins",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/FrozenRidge/mongolab-partner/issues"
+  },
+  "homepage": "https://github.com/FrozenRidge/mongolab-partner",
+  "dependencies": {
+    "superagent": "~0.15.7",
+    "nomnom": "~1.6.2"
+  }
+}
