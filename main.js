@@ -58,11 +58,13 @@ function createDatabase(opts) {
 
 nomnom.option('username', {
     abbr: 'u',
-    required: true
+    required: true,
+    help: "MongoLab Partner API username"
   })
   .option('password', {
     abbr: 'p',
-    required: true
+    required: true,
+    help: "MongoLab Partner API password"
   })
 
 nomnom.command('createAccount')
@@ -75,6 +77,7 @@ nomnom.command('createAccount')
     },
     accountName: {
       required: true
+      help: "Account name to create"
     }
   })
   .callback(createAccount)
@@ -86,7 +89,8 @@ nomnom.command('viewPartner').callback(viewPartner)
 nomnom.command('listDatabases')
   .options({
     accountName: {
-      required: true
+      required: true,
+      help: "Account name to list databases for"
     }
   })
   .callback(listDatabases)
@@ -94,16 +98,27 @@ nomnom.command('listDatabases')
 nomnom.command('createDatabase')
   .options({
     accountName: {
-      required: true
+      required: true,
+      help: "Account name to create this database under"
     },
     databaseName: {
-      required: true
+      required: true,
+      help: "Name of database to create"
     },
     plan: {
       default: "sandbox"
     },
     cloud: {
       default: 'JYC_us-sw-1'
+    },
+    databaseUsername: {
+      required: true,
+      help: "Username of admin user to create in database"
+
+    },
+    databasePassword: {
+      required: true,
+      help: "Password of admin user to create in database"
     }
   })
   .callback(listDatabases)
