@@ -66,7 +66,7 @@ module.exports = function(config) {
     },
 
     createAccount: function(opts, cb) {
-      request.post(API_URL + "partners/" + opts.username + "/accounts")
+      request.post(API_URL + "partners/" + config.username + "/accounts")
         .send({name: opts.accountName, adminUser: {email: opts.adminEmail, username: opts.adminUser}})
         .auth(config.username, config.password)
         .end(function(err, res) {
