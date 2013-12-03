@@ -78,7 +78,7 @@ module.exports = function(config) {
     },
 
     createDatabase: function(opts, cb) {
-      request.post(API_URL + "partners/" + opts.username + "/accounts/" + opts.accountName + "/databases")
+      request.post(API_URL + "partners/" + config.username + "/accounts/" + opts.accountName + "/databases")
         .send({name: opts.databaseName})
         .send({plan: opts.plan})
         .send({cloud: opts.cloud})
