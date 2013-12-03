@@ -1,6 +1,6 @@
 {
   "name": "mongolab-partner",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "MongoLab Partner API wrapper",
   "main": "index.js",
   "bin": {
